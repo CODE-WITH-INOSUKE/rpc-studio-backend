@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "tsx src/index.ts"
+    "build:frontend": "cd ../frontend && npm run build",
+    "build": "npm run build:frontend && tsc",
+    "start": "tsx src/index.ts",
+    "postinstall": "cd ../frontend && npm install"
   },
   "dependencies": {
     "better-sqlite3": "^12.11.1",
@@ -24,5 +26,9 @@
     "@types/ws": "^8.18.1",
     "tsx": "^4.19.3",
     "typescript": "5.4"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.1": true
   }
 }
