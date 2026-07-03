@@ -3,3 +3,6 @@ dist
 .env
 data
 public
+frontend/node_modules
+frontend/.next
+frontend/out
