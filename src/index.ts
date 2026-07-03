@@ -14,7 +14,7 @@ const PORT = parseInt(process.env.PORT || '4000', 10);
 app.use(cors({ origin: process.env.FRONTEND_URL || true, credentials: true }));
 app.use(express.json());
 
-const frontendOut = path.resolve(__dirname, '../../frontend/out');
+const frontendOut = path.resolve(__dirname, '../public');
 app.use(express.static(frontendOut));
 
 app.get('/health', (_req, res) => {

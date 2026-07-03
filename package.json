@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build:frontend": "cd ../frontend && npm run build",
+    "build:frontend": "cd ../frontend && npm run build && mkdir -p ../backend/public && cp -r out/* ../backend/public/",
     "build": "npm run build:frontend && tsc",
-    "start": "tsx src/index.ts",
+    "start": "node dist/index.js",
     "postinstall": "cd ../frontend && npm install"
   },
   "dependencies": {
