@@ -3,8 +3,10 @@ set -e
 
 if [ ! -f "public/index.html" ]; then
   echo "[start] Building frontend..."
+  if [ ! -d "frontend/node_modules" ]; then
+    cd frontend && npm install && cd ..
+  fi
   cd frontend
-  npm install
   NODE_OPTIONS="--max-old-space-size=4096" npm run build
   mkdir -p ../public
   cp -r out/* ../public/

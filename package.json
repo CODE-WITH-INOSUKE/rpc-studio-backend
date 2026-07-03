@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build:frontend": "cd frontend && npm install && npm run build && mkdir -p ../public && cp -r out/* ../public/",
-    "start": "scripts/start.sh",
-    "postinstall": "cd frontend && npm install"
+    "start": "scripts/start.sh"
   },
   "dependencies": {
     "better-sqlite3": "^12.11.1",
